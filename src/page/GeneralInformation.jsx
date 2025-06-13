@@ -2,8 +2,11 @@ import React from 'react';
 import '../styles/GeneralInformation.css';
 import { FaBarcode } from 'react-icons/fa';
 import { BsInfoCircle } from 'react-icons/bs';
+import  { useState } from 'react';
 
 const GeneralInformation = () => {
+  const [showAdvanced, setShowAdvanced] = useState(false);
+
   return (
     <div className="general-info-form">
       <div className="form-group radio-group">
@@ -90,10 +93,50 @@ const GeneralInformation = () => {
       <div className="form-group switch-toggle">
         <label>Advance</label>
         <label className="switch">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={showAdvanced}
+            onChange={() => setShowAdvanced(!showAdvanced)}
+          />
           <span className="slider round"></span>
         </label>
       </div>
+      {showAdvanced && (
+        <>
+          <div className="form-row">
+            <div className="form-group">
+              <label>Lead Time <span className="tooltip">?</span></label>
+              <select><option>Select Category</option></select>
+            </div>
+            <div className="form-group">
+              <label>Reorder Level <span className="tooltip">?</span></label>
+              <select><option>Select Category</option></select>
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>Initial Stock Quantity <span className="tooltip">?</span></label>
+              <input type="text" placeholder="In No." />
+            </div>
+
+            <div className="form-group">
+              <label>Track <span className="tooltip">?</span></label>
+              <div className="track">
+                <label><input type="radio" name="track" defaultChecked /> Serial No.</label>
+                <label><input type="radio" name="track" /> Batch No.</label>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Status <span className="tooltip">?</span></label>
+              <div className="radio-options">
+                <label><input className='round' type="checkbox" /> Returnable</label>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

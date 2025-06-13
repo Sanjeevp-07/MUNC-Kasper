@@ -12,12 +12,7 @@
   flex-wrap: wrap;
 }
 
-.form-group {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-}
+
 
 label {
   font-weight: 500;
@@ -47,12 +42,14 @@ select {
 }
 
 .toggle-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: grey;
 }
 
-/* Toggle Switch */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -94,4 +91,66 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(18px);
+}
+
+
+.discount-period-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.discount-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.discount-period {
+  display: flex;
+  gap: 20px;
+}
+
+.date-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.date-input-wrapper input[type="date"] {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  appearance: none; /* remove default date icon */
+  background-color: white;
+}
+
+.calendar-icon {
+  position: absolute;
+  left: 149px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.info-icon {
+  font-size: 14px;
+  color: #888;
+}
+
+.form-little{
+  max-width: 180px;
+  margin-bottom: 20px;
+}
+
+.form-little2 {
+    max-width: 180px;
+    top: -51px;
+    position: relative;
 }

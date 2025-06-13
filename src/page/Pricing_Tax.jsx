@@ -1,7 +1,14 @@
 import React from 'react';
+import { BsInfoCircle } from 'react-icons/bs';
+import { FaRegCalendarAlt } from 'react-icons/fa';
+import  { useState } from 'react';
+
 import '../styles/Pricing_Tax.css';
 
 const Pricing_Tax = () => {
+
+  const [includeGST, setIncludeGST] = useState(false);
+
   return (
     <div className="pricing-tax-form">
       <div className="form-row">
@@ -46,13 +53,19 @@ const Pricing_Tax = () => {
             <option>Select Category</option>
           </select>
         </div>
-        <div className="form-group">
-          <label>
-            Discount Period <span className="tooltip">?</span>
+        <div className="discount-period-wrapper">
+          <label className="discount-label">
+            Discount Period <BsInfoCircle className="info-icon" />
           </label>
           <div className="discount-period">
-            <input type="date" />
-            <input type="date" />
+            <div className="date-input-wrapper">
+              <FaRegCalendarAlt className="calendar-icon" />
+              <input type="text" placeholder="From" />
+            </div>
+            <div className="date-input-wrapper">
+              <FaRegCalendarAlt className="calendar-icon" />
+              <input type="text" placeholder="To" />
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +81,7 @@ const Pricing_Tax = () => {
         </div>
       </div>
 
-      <div className="form-row">
+      <div className="form-little">
         <div className="form-group">
           <label>
             HSN / SAC <span className="tooltip">?</span>
@@ -83,11 +96,27 @@ const Pricing_Tax = () => {
         <div className="toggle-container">
           <label>Price Include GST</label>
           <label className="switch">
-            <input type="checkbox" />
+            <input type="checkbox" checked={includeGST} onChange={(e) => setIncludeGST(e.target.checked)} />
             <span className="slider round"></span>
           </label>
         </div>
       </div>
+      {includeGST && (
+        <div className="form-little2 ">
+          <div className="form-group">
+            <label>
+              GST Rate <span className="tooltip">?</span>
+            </label>
+            <select>
+              <option value="0">0%</option>
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18">18%</option>
+              <option value="28">28%</option>
+            </select>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
