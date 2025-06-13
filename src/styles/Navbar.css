@@ -1,0 +1,63 @@
+.navbar {
+  width: 100%; /* Make sure it stretches full screen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+  margin: 1px;
+  position: fixed;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+    width: auto;
+    height: 40px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.logo-text sup {
+  font-size: 10px;
+  vertical-align: super;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-wrapper {
+  background-color: #f6f7f9;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #007bff;
+  transition: background-color 0.2s;
+}
+
+.icon-wrapper:hover {
+  background-color: #eaf1ff;
+}
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
